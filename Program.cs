@@ -60,6 +60,8 @@ namespace JurassicPark
             Console.WriteLine("What enclosure do you want to move the dinosaur to?");
             var newEnclosure = int.Parse(Console.ReadLine());
 
+            tracker.MoveDinosaur(dinoToMove, newEnclosure);
+
             break;
 
           case "diet":
