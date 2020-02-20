@@ -22,6 +22,8 @@ namespace JurassicPark
       };
 
       Dinosaur.Add(dinosaur);
+      Console.Clear();
+      Console.WriteLine($"Dinosaur {name} was added.");
 
     }
 
@@ -32,6 +34,9 @@ namespace JurassicPark
       var dinosaurToRemmove = Dinosaur.First(dinosaur => dinosaur.Name == dinoName);
       Dinosaur.Remove(dinosaurToRemmove);
 
+      Console.Clear();
+      Console.WriteLine($"Dinosaur {dinoName} was removed.");
+
     }
 
     public void MoveDinosaur(string name, int enclosure)
@@ -39,6 +44,9 @@ namespace JurassicPark
 
       Dinosaur.Find(dinosaur => dinosaur.Name == name).EnclosureNumber = enclosure;
       //Dinosaur.
+
+      Console.Clear();
+      Console.WriteLine($"Dinosaur {name} was was moved to enclosute {enclosure}.");
 
     }
 
@@ -60,12 +68,21 @@ namespace JurassicPark
     public void ThreeHeavies()
     {
       var sorted = Dinosaur.OrderByDescending(Dinosaur => Dinosaur.Weight).ToList();
-
-      Console.WriteLine("The three heaviest dinosaurs are...");
-      for (int i = 0; i <= 2; i++)
+      Console.Clear();
+      if (sorted.Count < 3)
       {
-        Console.WriteLine($"{sorted[i].Name} weighs {sorted[i].Weight}");
+        Console.WriteLine("There are not 3 dinosaurs.");
       }
+      else
+      {
+        Console.WriteLine("The three heaviest dinosaurs are...");
+        for (int i = 0; i <= 2; i++)
+        {
+          Console.WriteLine($"{sorted[i].Name} weighs {sorted[i].Weight}");
+        }
+
+      }
+
 
     }
 

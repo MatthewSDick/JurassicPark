@@ -26,7 +26,7 @@ namespace JurassicPark
             // Display the Dinosaurs
 
             var sortedDinosaurList = tracker.Dinosaur.OrderByDescending(Dinosaur => Dinosaur.DateAcquired).ToList();
-
+            Console.Clear();
 
             foreach (var s in sortedDinosaurList)
             {
@@ -45,7 +45,7 @@ namespace JurassicPark
             var enclosure = int.Parse(Console.ReadLine());
 
             tracker.AddNewDinosaur(dinoName, diet, weight, enclosure);
-            Console.Clear();
+
             break;
 
           case "remove":
@@ -69,6 +69,7 @@ namespace JurassicPark
             // This will the total number of each type of diet
 
             tracker.DietCount(out int carnivore, out int herbivore);
+            Console.Clear();
             Console.Write($"There are currently {carnivore} carnivores and {herbivore} herbivores.");
 
             break;
